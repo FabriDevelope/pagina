@@ -1018,25 +1018,14 @@
   margin: 100px auto;
   padding: 60px 40px;
   background: rgba(13, 10, 35, 0.9);
-  border-radius: 20px; /* Aplica redondeo general */
+  border-radius: 20px;
   position: relative;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
-  overflow: hidden; /* Asegura que el borde superior siga el redondeo */
+  border-top: 4px solid;
+  border-image: linear-gradient(to right, #00f0ff, #9c52ff) 1;
+  backdrop-filter: blur(6px);
+  text-align: center;
 }
-
-.video-feature::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 4px;
-  width: 100%;
-  background: linear-gradient(to right, #00f0ff, #9c52ff);
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  z-index: 2;
-}
-
 
 .video-feature .section-title {
   font-size: 32px;
@@ -1329,7 +1318,7 @@
                             
                             <div class="team-member">
                                 <div class="member-avatar">
-                                    <img src="https://media.discordapp.net/attachments/1373527207078658123/1392633158360498226/1c6a3117fbfa2d699112084b583927d3.webp?ex=68718fb2&is=68703e32&hm=9dc2720e134247ad1f98e4be2f6ed079577e62b1a91597cb7bb6715b6748d7ca&=&format=webp&width=77&height=77" alt="cristiansitu">
+                                    <img src="https://media.discordapp.net/attachments/1373527207078658123/1392633158360498226/1c6a3117fbfa2d699112084b583927d3.webp?ex=68703e32&is=686eecb2&hm=921cb4b850016f6ea634909b1d166b7712e3c9cf06abdc6c6c8df1baaf0acd3d&=&format=webp&width=77&height=77" alt="cristiansitu">
                                 </div>
                                 <h3 class="member-name">cristiansitu</h3>
                                 <p class="member-role">Administrador</p>
@@ -1340,7 +1329,7 @@
                             
                             <div class="team-member">
                                 <div class="member-avatar">
-                                    <img src="https://media.discordapp.net/attachments/1361158438935330908/1392630228324712498/7bf785d2024d7c71d673b7259f9d5f68.png?ex=68718cf8&is=68703b78&hm=0ecbe8745672a728a5b9d573ab3adb92d1b5fa82626f1ee1f4c08979a15270ca&=&format=webp&quality=lossless&width=64&height=64" alt="Floppa">
+                                    <img src="https://media.discordapp.net/attachments/1361158438935330908/1392630228324712498/7bf785d2024d7c71d673b7259f9d5f68.png?ex=68703b78&is=686ee9f8&hm=b0e3918bd8928930a1dc6bf27d4fd178d31887c5179c52c22a67d345e0a06911&=&format=webp&quality=lossless&width=64&height=64" alt="Floppa">
                                 </div>
                                 <h3 class="member-name">Floppa</h3>
                                 <p class="member-role">Administrador</p>
