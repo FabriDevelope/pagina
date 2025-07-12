@@ -1445,17 +1445,17 @@ Nombre de usuario e identificador de Discord.
 
 Mensajes enviados en canales públicos o privados del servidor.
 
-Participación en encuestas, formularios o sorteos voluntarios.</p>
+Participación en encuestas, formularios o sorteos voluntarios.
 
-<p>b- Información recopilada automáticamente:
+b- Información recopilada automáticamente:
 
 Dirección IP (no identificable personalmente por ZONAR, solo disponible para plataformas externas como Netlify).
 
 Información del navegador, sistema operativo, fecha y hora de acceso.
 
-Páginas visitadas dentro del sitio web y tiempos de permanencia.</p>
+Páginas visitadas dentro del sitio web y tiempos de permanencia.
 
-<p>c- Cookies y tecnologías similares:
+c- Cookies y tecnologías similares:
 
 Actualmente, ZONAR no implementa cookies propias. Sin embargo, plataformas externas como Netlify o Discord pueden utilizar cookies para sus propios fines, bajo sus respectivas políticas de privacidad.</p>
                         </div>
@@ -1480,13 +1480,13 @@ Analizar estadísticas de uso de forma agregada y anónima para mejorar la exper
                         
                         <div class="rule-card discord-card">
                             <h3>5. Divulgación de información a terceros</h3>
-                            <p>ZONAR no comparte, vende ni intercambia información personal con terceros. No obstante, los datos pueden estar alojados en plataformas externas utilizadas por la comunidad, como:</p>
+                            <p>ZONAR no comparte, vende ni intercambia información personal con terceros. No obstante, los datos pueden estar alojados en plataformas externas utilizadas por la comunidad, como:
 
-<p>Discord Inc.: para la gestión del servidor y sus funciones.</p>
+Discord Inc.: para la gestión del servidor y sus funciones.
 
-<p>Netlify Inc.: como proveedor de hosting para el sitio web.</p>
+Netlify Inc.: como proveedor de hosting para el sitio web.
 
-<p>Estas plataformas cuentan con sus propias políticas de privacidad, las cuales recomendamos consultar.</p>
+Estas plataformas cuentan con sus propias políticas de privacidad, las cuales recomendamos consultar.</p>
                         </div>
                         
                         <div class="rule-card discord-card">
@@ -1649,20 +1649,22 @@ Vía formulario de contacto en el sitio web (si está disponible).</p>
                 });
             });
             
-            // Animaciones al hacer scroll
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.1
-            };
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('animate-in');
-                    }
-                });
-            }, observerOptions);
+            // Animaciones al hacer scroll (solo una vez por elemento)
+const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+            observer.unobserve(entry.target); // <- esto lo desactiva después de animarse
+        }
+    });
+}, observerOptions);
+
             
             // Observar elementos que deben animarse
             document.querySelectorAll('.feature-card, .rule-card, .project-card, .team-member, .section-title').forEach(el => {
