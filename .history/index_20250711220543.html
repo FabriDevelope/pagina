@@ -138,15 +138,19 @@
             opacity: 1;
         }
 
-        /* Header */
-        header {
-            padding: 20px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
-            z-index: 100;
-        }
+header {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky; /* <- CAMBIAMOS esto */
+    top: 0;
+    z-index: 999; /* más alto que otras capas */
+    background: rgba(15, 10, 35, 0.8); /* estilo Zonar */
+    backdrop-filter: blur(10px); /* difuminado */
+    border-bottom: 1px solid rgba(100, 100, 255, 0.1); /* línea abajo */
+}
+
 
         .logo {
             display: flex;
@@ -298,13 +302,14 @@
 
         /* Hero Section */
         .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            padding: 80px 0 60px;
-            position: relative;
-        }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 120px 0 60px; /* antes era 80px arriba */
+    position: relative;
+}
+
 
         .hero h1 {
             font-size: 4.5rem;
@@ -1080,27 +1085,32 @@
     <div class="grid-overlay"></div>
     <div class="particles" id="particles"></div>
     
-    <div class="container" id="main-container">
-        <!-- Header -->
-        <header>
-            <div class="logo" style="display: flex; align-items: center; gap: 8px;">
-                <span> - Zonar</span>
-            </div>
+<!-- Header (fuera del container) -->
+<header>
+  <div class="container" style="display: flex; justify-content: space-between; align-items: center; padding: 20px 0;">
+    <div class="logo" style="display: flex; align-items: center; gap: 8px;">
+        <span>Zonar</span>
+    </div>
 
-            <nav>
-                <ul>
-                    <li><a href="#" data-page="home">Inicio</a></li>
-                    <li><a href="#" data-page="rules">Reglas</a></li>
-                    <li><a href="#" data-page="project">Acerca de</a></li>
-                    <li><a href="#" data-page="team">Equipo</a></li>
-                </ul>
-            </nav>
-            <div class="nav-buttons">
-                <a href="https://discord.gg/" target="_blank" class="btn btn-primary btn-sm">
-                    <i class="fab fa-discord"></i> Descargar
-                </a>
-            </div>
-        </header>
+    <nav>
+        <ul>
+            <li><a href="#" data-page="home">Inicio</a></li>
+            <li><a href="#" data-page="rules">Reglas</a></li>
+            <li><a href="#" data-page="project">Acerca de</a></li>
+            <li><a href="#" data-page="team">Equipo</a></li>
+        </ul>
+    </nav>
+    <div class="nav-buttons">
+        <a href="https://discord.gg/" target="_blank" class="btn btn-primary btn-sm">
+            <i class="fab fa-discord"></i> Descargar
+        </a>
+    </div>
+  </div>
+</header>
+
+<!-- Container de contenido -->
+<div class="container" id="main-container">
+
 
         <!-- Secciones de página -->
         <main>
@@ -1123,7 +1133,7 @@
   <div class="carousel-3d-wrapper">
     <div class="carousel-3d">
       <div class="carousel-item">
-        <img src="https://imgur.com/a/rRy1CUg" alt="Foto 1">
+        <img src="https://media.discordapp.net/attachments/1361158438935330908/1392646777764581517/image.png?ex=68704ae1&is=686ef961&hm=818903c84c392879fc6cad950d7c91d4a96e2001b59bd84c91e6870011b4e695&=&format=webp&quality=lossless&width=1322&height=456" alt="Foto 1">
         <p>Discord interactivo e intuitivo</p>
       </div>
       <div class="carousel-item">
@@ -1131,7 +1141,7 @@
         <p>Jugá con gente de todos lados</p>
       </div>
       <div class="carousel-item">
-        <img src="https://imgur.com/a/T4PbvEn" alt="Foto 3">
+        <img src="https://media.discordapp.net/attachments/1361158438935330908/1392646594251456553/image.png?ex=68704ab6&is=686ef936&hm=19f5381a2d0d2f62cb50cf603fd05bc0f34195ff69c00ee85473469229b71293&=&format=webp&quality=lossless&width=1327&height=414" alt="Foto 3">
         <p>Soporte 24/7</p>
       </div>
     </div>
@@ -1328,7 +1338,7 @@
                             
                             <div class="team-member">
                                 <div class="member-avatar">
-                                    <img src="https://imgur.com/a/bQaxPbP" alt="cristiansitu">
+                                    <img src="https://media.discordapp.net/attachments/1373527207078658123/1392633158360498226/1c6a3117fbfa2d699112084b583927d3.webp?ex=68718fb2&is=68703e32&hm=9dc2720e134247ad1f98e4be2f6ed079577e62b1a91597cb7bb6715b6748d7ca&=&format=webp&width=77&height=77" alt="cristiansitu">
                                 </div>
                                 <h3 class="member-name">cristiansitu</h3>
                                 <p class="member-role">Administrador</p>
@@ -1339,7 +1349,7 @@
                             
                             <div class="team-member">
                                 <div class="member-avatar">
-                                    <img src="https://imgur.com/a1Ow6Ed" alt="Floppa">
+                                    <img src="https://media.discordapp.net/attachments/1361158438935330908/1392630228324712498/7bf785d2024d7c71d673b7259f9d5f68.png?ex=68718cf8&is=68703b78&hm=0ecbe8745672a728a5b9d573ab3adb92d1b5fa82626f1ee1f4c08979a15270ca&=&format=webp&quality=lossless&width=64&height=64" alt="Floppa">
                                 </div>
                                 <h3 class="member-name">Floppa</h3>
                                 <p class="member-role">Administrador</p>
